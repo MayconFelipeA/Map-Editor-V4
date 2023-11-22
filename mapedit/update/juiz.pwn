@@ -15,8 +15,8 @@ public UpdateText3D(playerid)
             {
                 if(objectindex3d[i] == INVALID_PLAYER_3DTEXT_ID)
                 {
-                    GetObjectPos(i, x, y, z); 
-                    static string[64];
+                    GetObjectPos(i, x, y, z);
+                    static string[37 + 6 + 6];
                     format(string, sizeof(string), "Idx: {FF1C21}%d{D8CD43} - {FF1C21}%d", i, GetObjectModel(i));
                     //DeletePlayer3DTextLabel(objectindex3d[i]);
 
@@ -45,39 +45,6 @@ public UpdateText3D(playerid)
         }
     }
     return 1;
-}
-
-CMD:cp(playerid)
-{
-    new Float:x, Float:y, Float:z;
-
-    GetPlayerPos(playerid, x, y, z);
-    SetPlayerCheckpoint(playerid, x, y, z + 0.5, 1.5);
-    return 1;
-}
-
-CMD:cp1(playerid)
-{
-    new Float:x, Float:y, Float:z;
-
-    GetPlayerPos(playerid, x, y, z);
-    SetPlayerCheckpoint(playerid, x, y, z + 1.5, 1.5);
-    return 1;
-}
-
-CMD:cp2(playerid)
-{
-    new Float:x, Float:y, Float:z;
-
-    GetPlayerPos(playerid, x, y, z);
-    SetPlayerCheckpoint(playerid, x, y, z + 3.5, 1.5);
-    return 1;
-}
-
-CMD:cp3(playerid)
-{
-	SetPlayerCheckpoint(playerid, 1757.7467,-1236.3423,2353.2, 1.5);
-	return 1;
 }
 
 CMD:edit(playerid, params[])
